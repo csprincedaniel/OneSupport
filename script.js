@@ -84,8 +84,9 @@ kb_buttons.forEach(function (button) {
             const urls = Urls[state];
             if (!urls) return;
 
-            currTab2 = window.open(urls[0][1], '_blank', 'noopener,noreferrer');
             currTab1 = window.open(urls[0][0], '_blank', 'noopener,noreferrer');
+            currTab2 = window.open(urls[0][1], '_blank', 'noopener,noreferrer');
+            
 
             const intro = Intros[state.toLowerCase()];
             if (intro) {
