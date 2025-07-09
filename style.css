@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f0f0f0;
+  color: #222;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  color: #444;
+}
+
+#nep, #kb, #instruction {
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 14px;
+  margin: 6px 8px 6px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #007BFF;
+  background: #007BFF;
+  color: white;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Hide the empty button in #kb */
+#kb button:empty {
+  display: none;
+}
