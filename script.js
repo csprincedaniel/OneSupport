@@ -27,6 +27,8 @@ const Neptunes = [
 
 const kb_buttons = document.querySelectorAll('button')
 
+const chosenText = document.querySelector('#chosen-text')
+
 let currTab1 = null, currTab2 = null;
 
 function closeTabs(){
@@ -92,6 +94,42 @@ kb_buttons.forEach  (function(button){
 
             currTab2 = window.open(Urls[button.textContent][0][1], '_blank', 'noopener, noreferrer');
             currTab1 = window.open(Urls[button.textContent][0][0], '_blank', 'noopener, noreferrer');
+
+            let solution;
+
+            switch(button.textContent.toLowerCase()){
+                case 'arizona':
+                    solution = "Thank you for calling the Arizona State Parks and Trails. This is _____ (first name). How can I help you today?"
+                    break
+                case 'california':
+                    solution = "Thank you for calling the Reserve California Reservation Center. This is _____ (first name). How may I help you today? "
+                    break
+                case 'florida':
+                    solution = "Thank you for calling the Florida State Parks reservation center. This is _____ (first name). How may I help you today?"
+                    break
+                case 'maricopa':
+                    solution = "Thank you for calling the Maricopa County Parks Reservations. This is _____ (first name). How can I help you today?"
+                    break
+                case 'minnesota':
+                    solution = "Thank you for calling Minnesota State Parks Reservations. This is [agent’s first name], how may I help you today?"
+                    break
+                case 'missouri':
+                    solution = "Thank you for calling Missouri State Parks Reservations.  This is _______ (first name).  How can I help you today?"
+                    break
+                case 'ndakota':
+                    solution ="Thank you for calling the North Dakota State Parks reservation center. This is _____ (first name). How may I help you today?"
+                    break
+                case 'ohio':
+                    solution="Thank you for calling Ohio State Parks reservations.  This is _______ (first name).  How can I help you today?"
+                    break
+                case 'virginia':
+                    solution= "Thank you for calling Virginia State Parks Reservations.  This is _______ (first name).  How can I help you today?"
+                    break
+                case 'wyoming':
+                    solution="Thank you for calling the Wyoming State Parks reservation center. This is _____ (first name). How may I help you today?"
+                    break
+            }
+            chosenText.innerHTML = `Just in case it didn't load yet, the intro is: <b>${solution}<b>`
 
         }
 
