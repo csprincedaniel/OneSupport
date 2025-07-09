@@ -47,28 +47,41 @@ kb_buttons.forEach  (function(button){
             let solution = 99
             switch(answer){
                 case 'arizona':
-                    sol = 0
+                    solution = 0
+                    break
                 case 'california':
-                    sol = 1
+                    solution = 1
+                    break
                 case 'florida':
-                    sol = 2
+                    solution = 2
+                    break
                 case 'maricopa':
-                    sol = 3
+                    solution = 3
+                    break
                 case 'minnesota':
-                    sol = 4
+                    solution = 4
+                    break
                 case 'missouri':
-                    sol = 5
-                case 'north dakota':
-                    sol =6
+                    solution = 5
+                    break
+                case 'northdakota':
+                    solution =6
+                    break
+                case 'ohio':
+                    solution=7
+                    break
                 case 'virginia':
-                    sol=7
+                    solution=8
+                    break
                 case 'wyoming':
-                    sol=8
+                    solution=9
+                    break
             }
 
             if (solution == 99){
                 alert("invalid option. please check your spelling.")
             } else {
+                
                 window.open(Neptunes[solution],'_blank', 'noopener, noreferrer')
             }
             
