@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h2 style="color:red; text-align:center;">
+    <h2 style="color:red; text-align:center; margin-bottom:10px;">
         <b>If it asks, you must allow popups. Or else the script won't work.</b>
     </h2>
 
     <div id="nep">
         <h1>Neptune Portals</h1>
         <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-            <button>Open All</button>
-            <button>Open All With Delay</button>
+            <button id="nep-open-all">Open All</button>
+            <button id="nep-open-delay">Open All With Delay</button>
             <button id="toggle-nep-states">Select State ▼</button>
         </div>
-
         <div id="nep-states" style="display:none; margin-top:10px;">
             <button data-index="0">Arizona</button>
             <button data-index="1">California</button>
@@ -34,12 +33,13 @@
     </div>
 
     <div id="kb">
-        <h1>KnowledgeBase Portals</h1>
-
+        <h1>Scripts, KnowledgeBase & Reservation Maps (By State)</h1>
         <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
             <button class="kb-toggle" data-type="script">Script ▼</button>
             <button class="kb-toggle" data-type="kb">KB ▼</button>
+            <button class="kb-toggle" data-type="map">Map ▼</button>
             <button class="kb-toggle" data-type="both">Script+KB ▼</button>
+            <button class="kb-toggle" data-type="all">Script+KB+Map ▼</button>
         </div>
 
         <div id="kb-script" class="kb-states" style="display:none; margin-top:10px;">
@@ -68,6 +68,19 @@
             <button data-state="Wyoming">Wyoming</button>
         </div>
 
+        <div id="kb-map" class="kb-states" style="display:none; margin-top:10px;">
+            <button data-state="Arizona">Arizona</button>
+            <button data-state="California">California</button>
+            <button data-state="Florida">Florida</button>
+            <button data-state="Maricopa">Maricopa</button>
+            <button data-state="Minnesota">Minnesota</button>
+            <button data-state="Missouri">Missouri</button>
+            <button data-state="NDakota">NDakota</button>
+            <button data-state="Ohio">Ohio</button>
+            <button data-state="Virginia">Virginia</button>
+            <button data-state="Wyoming">Wyoming</button>
+        </div>
+
         <div id="kb-both" class="kb-states" style="display:none; margin-top:10px;">
             <button data-state="Arizona">Arizona</button>
             <button data-state="California">California</button>
@@ -80,16 +93,8 @@
             <button data-state="Virginia">Virginia</button>
             <button data-state="Wyoming">Wyoming</button>
         </div>
-    </div>
 
-    <div id="maps">
-        <h1>Reservation Maps Shortcuts</h1>
-
-        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-            <button id="toggle-maps-states">Select State ▼</button>
-        </div>
-
-        <div id="maps-states" style="display:none; margin-top:10px;">
+        <div id="kb-all" class="kb-states" style="display:none; margin-top:10px;">
             <button data-state="Arizona">Arizona</button>
             <button data-state="California">California</button>
             <button data-state="Florida">Florida</button>
@@ -103,13 +108,49 @@
         </div>
     </div>
 
+    <div id="search-section" >
+        <h1>Search Tyler KB Portal</h1>
+        <input type="text" id="search-input" placeholder="Enter search terms" style="width: 300px; padding: 5px;">
+        <button id="search-btn">Search</button>
+    </div>
 
     <p id="chosen-text"></p>
 
     <div id="instruction">
         <h3>Instructions</h3>
-        <p>Click "Open All" to open all Neptune portals at once.</p>
-        <p>Use the dropdowns in KnowledgeBase to select Script, KB, or both for your state.</p>
+        <ul>
+            <li><b>Neptune Portals</b>
+                <ul>
+                    <li>Use the buttons to open all portals at once or with delay.</li>
+                    <li>Use the <i>Select State</i> dropdown to open the portal for an individual state.</li>
+                </ul>
+            </li>
+            <li><b>KnowledgeBase Portals</b>
+                <ul>
+                    <li>Use one of the five dropdowns: <i>Script</i>, <i>KB</i>, <i>Map</i>, <i>Script + KB</i>, or <i>Script + KB + Map</i>.</li>
+                    <li>Select a state from the dropdown to open the corresponding page(s).</li>
+                    <li>Only one dropdown can be open at a time.</li>
+                    <li>The <i>Script + KB</i> and <i>Script + KB + Map</i> options also display the call intro script below.</li>
+                </ul>
+            </li>
+            <li><b>Search Tyler KB Portal</b>
+                <ul>
+                    <li>Enter keywords or phrases into the search box.</li>
+                    <li>Click <i>Search</i> to open a new tab with results from the Tyler KB portal.</li>
+                    <li>Supports spaces and special characters automatically.</li>
+                </ul>
+            </li>
+            <li><b>Popup Blockers</b>
+                <ul>
+                    <li>Ensure popups are allowed or the links will not open correctly.</li>
+                </ul>
+            </li>
+            <li><b>Performance</b>
+                <ul>
+                    <li>If your device has low memory, opening many tabs at once might slow down your browser.</li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
     <script src="script.js"></script>
