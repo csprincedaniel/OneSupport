@@ -1,42 +1,115 @@
-<!-- OneSupport Cheat -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OneSupport Cheat</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h2 style="color:red; text-align:center;"><b>If it asks, you must allow popups. Or else the script won't work.</b></h2>
-    
+    <h2 style="color:red; text-align:center;">
+        <b>If it asks, you must allow popups. Or else the script won't work.</b>
+    </h2>
+
     <div id="nep">
         <h1>Neptune Portals</h1>
-        <button>Open All</button>
-        <button>Go To Individual State</button>
-        <button>Open All With Delay</button>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+            <button>Open All</button>
+            <button>Open All With Delay</button>
+            <button id="toggle-nep-states">Select State ▼</button>
+        </div>
+
+        <div id="nep-states" style="display:none; margin-top:10px;">
+            <button data-index="0">Arizona</button>
+            <button data-index="1">California</button>
+            <button data-index="2">Florida</button>
+            <button data-index="3">Maricopa</button>
+            <button data-index="4">Minnesota</button>
+            <button data-index="5">Missouri</button>
+            <button data-index="6">NorthDakota</button>
+            <button data-index="7">Ohio</button>
+            <button data-index="8">Virginia</button>
+            <button data-index="9">Wyoming</button>
+        </div>
     </div>
-    
+
     <div id="kb">
-        <h1>KnowledgeBase Portals</h1> <!-- Fixed: double nested <h1> -->
-        <button id="kb-Arizona">Arizona</button>
-        <button id="kb-California">California</button>
-        <button id="kb-Florida">Florida</button>
-        <button id="kb-Maricopa">Maricopa</button>
-        <button id="kb-Minnesota">Minnesota</button>
-        <button id="kb-Missouri">Missouri</button>
-        <button id="kb-NDakota">NDakota</button>
-        <button id="kb-Ohio">Ohio</button>
-        <button id="kb-Virginia">Virginia</button>
-        <button id="kb-Wyoming">Wyoming</button>
+        <h1>KnowledgeBase Portals</h1>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+            <button class="kb-toggle" data-type="script">Script ▼</button>
+            <button class="kb-toggle" data-type="kb">KB ▼</button>
+            <button class="kb-toggle" data-type="both">Script+KB ▼</button>
+        </div>
+
+        <div id="kb-script" class="kb-states" style="display:none; margin-top:10px;">
+            <button data-state="Arizona">Arizona</button>
+            <button data-state="California">California</button>
+            <button data-state="Florida">Florida</button>
+            <button data-state="Maricopa">Maricopa</button>
+            <button data-state="Minnesota">Minnesota</button>
+            <button data-state="Missouri">Missouri</button>
+            <button data-state="NDakota">NDakota</button>
+            <button data-state="Ohio">Ohio</button>
+            <button data-state="Virginia">Virginia</button>
+            <button data-state="Wyoming">Wyoming</button>
+        </div>
+
+        <div id="kb-kb" class="kb-states" style="display:none; margin-top:10px;">
+            <button data-state="Arizona">Arizona</button>
+            <button data-state="California">California</button>
+            <button data-state="Florida">Florida</button>
+            <button data-state="Maricopa">Maricopa</button>
+            <button data-state="Minnesota">Minnesota</button>
+            <button data-state="Missouri">Missouri</button>
+            <button data-state="NDakota">NDakota</button>
+            <button data-state="Ohio">Ohio</button>
+            <button data-state="Virginia">Virginia</button>
+            <button data-state="Wyoming">Wyoming</button>
+        </div>
+
+        <div id="kb-both" class="kb-states" style="display:none; margin-top:10px;">
+            <button data-state="Arizona">Arizona</button>
+            <button data-state="California">California</button>
+            <button data-state="Florida">Florida</button>
+            <button data-state="Maricopa">Maricopa</button>
+            <button data-state="Minnesota">Minnesota</button>
+            <button data-state="Missouri">Missouri</button>
+            <button data-state="NDakota">NDakota</button>
+            <button data-state="Ohio">Ohio</button>
+            <button data-state="Virginia">Virginia</button>
+            <button data-state="Wyoming">Wyoming</button>
+        </div>
     </div>
+
+    <div id="maps">
+        <h1>Reservation Maps Shortcuts</h1>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+            <button id="toggle-maps-states">Select State ▼</button>
+        </div>
+
+        <div id="maps-states" style="display:none; margin-top:10px;">
+            <button data-state="Arizona">Arizona</button>
+            <button data-state="California">California</button>
+            <button data-state="Florida">Florida</button>
+            <button data-state="Maricopa">Maricopa</button>
+            <button data-state="Minnesota">Minnesota</button>
+            <button data-state="Missouri">Missouri</button>
+            <button data-state="NDakota">NDakota</button>
+            <button data-state="Ohio">Ohio</button>
+            <button data-state="Virginia">Virginia</button>
+            <button data-state="Wyoming">Wyoming</button>
+        </div>
+    </div>
+
 
     <p id="chosen-text"></p>
 
     <div id="instruction">
         <h3>Instructions</h3>
-        <p>Click "Open All" to open all neptune portals at once</p>
-        <p>Go to 'KnowledgeBase Portals' section to automatically pull up the script and KB for your state.</p>
+        <p>Click "Open All" to open all Neptune portals at once.</p>
+        <p>Use the dropdowns in KnowledgeBase to select Script, KB, or both for your state.</p>
     </div>
 
     <script src="script.js"></script>
